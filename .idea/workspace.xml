@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7b498d1-fe40-40d8-bfb3-abe3ad256d6e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/alessandrosalerno/jlome/engine/BackendLookup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/alessandrosalerno/jlome/order/cancelation/OrderDeleter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/alessandrosalerno/jlome/order/cancelation/OrderDeleterBackend.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/alessandrosalerno/jlome/order/cancelation/backend/DefaultOrderDeleterBackend.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/alessandrosalerno/jlome/order/cancelation/frontend/BuyOrderDeleter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/alessandrosalerno/jlome/order/cancelation/frontend/SellOrderDeleter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/alessandrosalerno/jlome/engine/LightMatchingEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/alessandrosalerno/jlome/engine/LightMatchingEngine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Record" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
