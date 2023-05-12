@@ -1,5 +1,8 @@
-package org.alessandrosalerno.jlome.order;
+package org.alessandrosalerno.jlome.order.processing;
 
-public record OrderTrades(Order order,
-                          Trade[] trades) {
+import org.alessandrosalerno.jlome.order.Order;
+import org.alessandrosalerno.jlome.order.Trade;
+
+public record OrderPlacementConfirmation(Order order,
+                                         Trade[] trades) {
 }

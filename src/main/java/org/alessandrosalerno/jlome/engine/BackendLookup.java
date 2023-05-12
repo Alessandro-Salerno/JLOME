@@ -3,7 +3,7 @@ package org.alessandrosalerno.jlome.engine;
 import org.alessandrosalerno.jlome.order.cancelation.OrderDeleterBackend;
 import org.alessandrosalerno.jlome.order.processing.OrderProcessorBackend;
 
-public class BackendLookup {
+public final class BackendLookup {
     private OrderProcessorBackend orderProcessorBackend;
     private OrderDeleterBackend orderDeleterBackend;
 

@@ -1,6 +1,6 @@
 package org.alessandrosalerno.jlome.engine;
 
-public class EngineState {
+public final class EngineState {
     private int currentOrderId;
     private int currentTradeId;
 

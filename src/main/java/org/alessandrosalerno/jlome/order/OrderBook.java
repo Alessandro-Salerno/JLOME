@@ -8,12 +8,12 @@ import java.util.Map;
 public class OrderBook {
     private MarketSide asks;
     private MarketSide bids;
-    private Map<Integer, Order> orderidMap;
+    private final Map<Integer, Order> orderIdMap;
 
     public OrderBook() {
         this.asks = new MarketSide();
         this.bids = new MarketSide();
-        this.orderidMap = new HashMap<>();
+        this.orderIdMap = new HashMap<>();
     }
 
     public MarketSide getAsks() {
@@ -24,7 +24,7 @@ public class OrderBook {
         return this.bids;
     }
 
-    public Map<Integer, Order> getOrderidMap() {
-        return this.orderidMap;
+    public Map<Integer, Order> getOrderIdMap() {
+        return this.orderIdMap;
     }
 }

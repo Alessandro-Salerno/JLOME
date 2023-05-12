@@ -6,7 +6,7 @@ import org.alessandrosalerno.jlome.order.OrderBook;
 import org.alessandrosalerno.jlome.order.cancelation.OrderDeleter;
 import org.alessandrosalerno.jlome.order.cancelation.OrderDeleterBackend;
 
-public class SellOrderDeleter implements OrderDeleter {
+public final class SellOrderDeleter implements OrderDeleter {
     private OrderDeleterBackend backend;
 
     public SellOrderDeleter(OrderDeleterBackend backend) {

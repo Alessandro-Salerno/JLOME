@@ -4,5 +4,5 @@ import org.alessandrosalerno.jlome.order.Order;
 
 import java.util.ArrayList;
 
-public class Market extends ArrayList<Order> {
+public class MarketDepth extends ArrayList<Order> {
 }

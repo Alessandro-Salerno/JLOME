@@ -2,7 +2,7 @@ package org.alessandrosalerno.jlome.engine;
 
 import org.alessandrosalerno.jlome.order.Order;
 import org.alessandrosalerno.jlome.order.OrderBook;
-import org.alessandrosalerno.jlome.order.OrderTrades;
+import org.alessandrosalerno.jlome.order.processing.OrderPlacementConfirmation;
 import org.alessandrosalerno.jlome.order.Side;
 import org.alessandrosalerno.jlome.order.cancelation.OrderDeleter;
 import org.alessandrosalerno.jlome.order.cancelation.backend.DefaultOrderDeleterBackend;
@@ -31,7 +31,7 @@ public class LightMatchingEngine {
         this.backendLookup = backendLookup;
     }
 
-    public synchronized OrderTrades addOrder(String sym, double price, double quantity, Side side) {
+    public synchronized OrderPlacementConfirmation addOrder(String sym, double price, double quantity, Side side) {
         assert side == Side.Buy || side == Side.Sell;
 
         OrderBook orderBook = this.orderBooks.setDefault(sym, new OrderBook());
@@ -52,10 +52,10 @@ public class LightMatchingEngine {
         assert this.orderBooks.containsKey(sym);
         OrderBook orderBook = this.orderBooks.get(sym);
 
-        if (orderBook.getOrderidMap().containsKey(orderId))
+        if (orderBook.getOrderIdMap().containsKey(orderId))
             return null;
 
-        Order order = orderBook.getOrderidMap().get(orderId);
+        Order order = orderBook.getOrderIdMap().get(orderId);
 
         OrderDeleter deleter = switch (order.getSide()) {
             case Buy -> new BuyOrderDeleter(this.backendLookup.getOrderDeleterBackend());
@@ -64,8 +64,12 @@ public class LightMatchingEngine {
         };
 
         Order finalorder = deleter.delete(order, orderBook);
-        orderBook.getOrderidMap().remove(orderId);
+        orderBook.getOrderIdMap().remove(orderId);
         return finalorder;
+    }
+
+    public DefaultableHashMap<String, OrderBook> getOrderBooks() {
+        return this.orderBooks;
     }
 
     public BackendLookup getBackendLookup() {
